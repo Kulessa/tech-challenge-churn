@@ -1,0 +1,66 @@
+{
+  "model_name": "Regressão Logística",
+  "best_parameters": {
+    "classifier__C": 10.0
+  },
+  "random_state": 42,
+  "threshold": 0.5,
+  "positive_class": "Churn = Yes",
+  "features": [
+    "gender",
+    "SeniorCitizen",
+    "Partner",
+    "Dependents",
+    "tenure",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod",
+    "MonthlyCharges",
+    "TotalCharges"
+  ],
+  "training_date": "2026-10-26",
+  "train_size": 7043,
+  "test_size": null,
+  "evaluation_status": "nested_cross_validation; independent_test_set_unavailable",
+  "previous_test_metrics_status": "exploratory_only; prior results were inspected and the comparison test was executed twice",
+  "cross_validation": {
+    "strategy": "nested StratifiedKFold",
+    "outer_folds": 5,
+    "inner_folds": 3,
+    "shuffle": true,
+    "selection_metric": "f1",
+    "metrics_mean": {
+      "accuracy": 0.805761157977934,
+      "precision": 0.6588686519755699,
+      "recall": 0.5548164184026037,
+      "f1": 0.6022545554313306,
+      "auc": 0.8450016954063875
+    },
+    "metrics_std": {
+      "accuracy": 0.011743899083498462,
+      "precision": 0.02349822584785852,
+      "recall": 0.033576084079189175,
+      "f1": 0.029039039347237384,
+      "auc": 0.014907083126574976
+    }
+  },
+  "test_metrics": null,
+  "baseline_nested_cv_f1": 0.6008282906290999,
+  "nested_cv_f1_delta_vs_baseline": 0.0014262648022306257,
+  "model_size_bytes": 8058,
+  "versions": {
+    "python": "3.12.10",
+    "scikit_learn": "1.9.1",
+    "pandas": "3.1.0",
+    "numpy": "2.5.4"
+  }
+}
