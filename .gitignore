@@ -1,0 +1,26 @@
+# Ambiente virtual
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Caches de ferramentas
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Segredos e configurações locais
+.env
+
+# Dados (o CSV não vai para o repositório)
+data/*.csv
+!data/.gitkeep
+
+# Sistema operacional
+Thumbs.db
+.DS_Store
