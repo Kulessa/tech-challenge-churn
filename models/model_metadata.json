@@ -53,6 +53,83 @@
       "auc": 0.014907083126574976
     }
   },
+  "subgroup_metrics_oof": {
+    "evaluation": "nested_stratified_cross_validation_outer_folds",
+    "model": "Regressão Logística",
+    "threshold": 0.5,
+    "metrics": [
+      {
+        "feature": "gender",
+        "group": "Female",
+        "count": 3488,
+        "actual_churn_rate": 0.269209,
+        "predicted_churn_rate": 0.232798,
+        "precision": 0.657635,
+        "recall": 0.56869,
+        "f1": 0.609937
+      },
+      {
+        "feature": "gender",
+        "group": "Male",
+        "count": 3555,
+        "actual_churn_rate": 0.261603,
+        "predicted_churn_rate": 0.214065,
+        "precision": 0.660972,
+        "recall": 0.54086,
+        "f1": 0.594914
+      },
+      {
+        "feature": "SeniorCitizen",
+        "group": "0",
+        "count": 5901,
+        "actual_churn_rate": 0.236062,
+        "predicted_churn_rate": 0.18285,
+        "precision": 0.653383,
+        "recall": 0.506102,
+        "f1": 0.570388
+      },
+      {
+        "feature": "SeniorCitizen",
+        "group": "1",
+        "count": 1142,
+        "actual_churn_rate": 0.416813,
+        "predicted_churn_rate": 0.432574,
+        "precision": 0.672065,
+        "recall": 0.697479,
+        "f1": 0.684536
+      },
+      {
+        "feature": "Contract",
+        "group": "Month-to-month",
+        "count": 3875,
+        "actual_churn_rate": 0.427097,
+        "predicted_churn_rate": 0.405161,
+        "precision": 0.659873,
+        "recall": 0.625982,
+        "f1": 0.642481
+      },
+      {
+        "feature": "Contract",
+        "group": "One year",
+        "count": 1473,
+        "actual_churn_rate": 0.112695,
+        "predicted_churn_rate": 0.002037,
+        "precision": 0.333333,
+        "recall": 0.006024,
+        "f1": 0.011834
+      },
+      {
+        "feature": "Contract",
+        "group": "Two year",
+        "count": 1695,
+        "actual_churn_rate": 0.028319,
+        "predicted_churn_rate": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    ]
+  },
   "test_metrics": null,
   "baseline_nested_cv_f1": 0.6008282906290999,
   "nested_cv_f1_delta_vs_baseline": 0.0014262648022306257,
