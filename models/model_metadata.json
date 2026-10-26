@@ -80,7 +80,7 @@
       },
       {
         "feature": "SeniorCitizen",
-        "group": "0",
+        "group": 0,
         "count": 5901,
         "actual_churn_rate": 0.236062,
         "predicted_churn_rate": 0.18285,
@@ -90,7 +90,7 @@
       },
       {
         "feature": "SeniorCitizen",
-        "group": "1",
+        "group": 1,
         "count": 1142,
         "actual_churn_rate": 0.416813,
         "predicted_churn_rate": 0.432574,
