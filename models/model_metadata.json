@@ -56,7 +56,7 @@
   "test_metrics": null,
   "baseline_nested_cv_f1": 0.6008282906290999,
   "nested_cv_f1_delta_vs_baseline": 0.0014262648022306257,
-  "model_size_bytes": 8058,
+  "model_size_bytes": 8634,
   "versions": {
     "python": "3.12.10",
     "scikit_learn": "1.9.1",
