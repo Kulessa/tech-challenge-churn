@@ -1,0 +1,2 @@
+experimento,modelo,parametros,f1_cv_media,f1_cv_dp,auc_cv_media,auc_cv_dp,precisao_cv,recall_cv,tempo_treino_s,f1_teste,auc_teste,data
+baseline_logistic_regression,LogisticRegression,"{""cv_folds"": 5, ""cv_shuffle"": true, ""max_iter"": 1000, ""random_state"": 42, ""test_size"": 0.2}",0.5923158544291797,0.03310768913690271,0.8461368989751807,0.01402551460721127,0.6528985914483468,0.5431438127090301,0.85183820000384,0.6040462427745664,0.8418610659019866,2026-10-26
