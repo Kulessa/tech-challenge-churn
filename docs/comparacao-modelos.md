@@ -22,7 +22,7 @@ O baseline fixo usa Regressão Logística com `C=1`; as demais entradas ajustam 
 Pelo maior F1 médio externo, o modelo selecionado é **Regressão Logística**. O pipeline salvo foi reajustado em todos os registros disponíveis, com parâmetros finais `{"classifier__C": 10.0}`. Não há métricas de teste finais (`test_metrics: null`), pois seria incorreto apresentar como independente um conjunto já consultado.
 A diferença observada para o baseline fixo (C=1) na validação externa é +0.0014 em F1. Ela é pequena frente à variação entre folds; portanto, não afirmamos que o ganho seja estatisticamente confiável nem que o modelo supere o baseline de forma generalizável.
 
-O pipeline completo, incluindo pré-processamento, está em `models/churn_model.joblib` (8,058 bytes). Os metadados em `models/model_metadata.json` registram o método aninhado, as versões e o estado da avaliação.
+O pipeline completo, incluindo pré-processamento, está em `models/churn_model.joblib` (8.634 bytes). Os metadados em `models/model_metadata.json` registram o método aninhado, as versões e o estado da avaliação.
 
 ## Próxima avaliação
 

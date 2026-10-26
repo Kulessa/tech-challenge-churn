@@ -163,16 +163,16 @@ Os 19 atributos de entrada, agrupados:
 
 **Por que não usar só a acurácia:** o alvo é desbalanceado. Segundo análises públicas do dataset, são cerca de 26,5% de churn (1.869 de 7.043 clientes) e 73,5% de não churn (5.174). Um modelo que sempre previsse "não churn" teria acurácia próxima de 73,5% sem encontrar nenhum cliente em risco (F1 da classe churn igual a zero). Esses números devem ser reconfirmados na EDA.
 
-**Protocolo de avaliação:**
+**Protocolo realizado e integridade da avaliação:**
 
-1. Divisão treino/teste estratificada (80/20, `random_state = 42`).
-2. Validação cruzada estratificada com 5 partições, apenas no conjunto de treino.
-3. Pré-processamento dentro do `Pipeline`, ajustado só nos dados de treino de cada partição.
-4. Comparação entre o baseline (Regressão Logística), o Random Forest e o MLP, com média e desvio das métricas.
-5. Critério do campeão: maior F1 médio na validação cruzada; empate decidido por AUC-ROC, simplicidade e custo computacional.
-6. Avaliação final do campeão no conjunto de teste, uma única vez.
+1. O conjunto foi consultado em análises e avaliações anteriores, incluindo repetição da avaliação de teste. Esses resultados históricos são exploratórios; não há mais um teste cego independente neste CSV.
+2. A comparação atual usa validação cruzada aninhada estratificada: 5 folds externos para estimar métricas e 3 folds internos para ajustar hiperparâmetros, com `random_state = 42`.
+3. O pré-processamento é ajustado dentro do `Pipeline` de cada fold, somente nos dados de treino daquele fold.
+4. A comparação inclui Regressão Logística, Random Forest e MLP. O critério de seleção é maior F1 médio externo; AUC-ROC, simplicidade e custo computacional complementam a análise.
+5. As métricas agregadas são estimativas de desenvolvimento. A diferença de F1 do campeão para o baseline fixo é apenas +0,0014, pequena frente à variação entre folds; não se afirma uma melhoria confiável.
+6. `test_metrics` e `test_size` permanecem nulos. Uma avaliação final exige dados novos e rotulados, não usados na exploração, seleção ou treinamento; o pipeline deve ser congelado antes dessa avaliação.
 
-**Referências mínimas:** o campeão deve superar o baseline e o classificador que sempre prevê "não churn".
+**Referências mínimas:** comparar com a Regressão Logística baseline e com o classificador que sempre prevê "não churn". A comparação informa diferenças observadas, mas não exige declarar superioridade quando a evidência não sustenta essa conclusão.
 
 ---
 
@@ -194,6 +194,7 @@ Os 19 atributos de entrada, agrupados:
 ## 13. Riscos, limitações e premissas
 
 - **Dataset fictício e estático:** é um retrato único no tempo, de uma empresa fictícia; o desempenho em uma operação real pode ser diferente.
+- **Sem teste independente:** todos os registros disponíveis já participaram da exploração ou avaliação; os resultados históricos de teste não são finais. A validação cruzada aninhada não substitui uma avaliação prospectiva em novos dados.
 - **Desbalanceamento de classes:** exige métricas além da acurácia; técnicas como ajuste de pesos ou de limiar podem ser avaliadas.
 - **Atributos sensíveis:** `gender` e `SeniorCitizen` podem gerar tratamento desigual entre grupos. O efeito deve ser avaliado e registrado no *Model Card*.
 - **`TotalCharges`:** 11 registros têm valor em branco; verificar na EDA se coincidem com `tenure = 0` e documentar o tratamento escolhido.
